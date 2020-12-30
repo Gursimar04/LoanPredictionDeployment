@@ -1,0 +1,294 @@
+html {
+  scroll-behavior: smooth;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  background: transparent;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  /* box-shadow: inset 0 0 5px grey;  */
+  border-radius: 10px;
+  background: transparent; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #f9f8f6; 
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background:  #f9f8f6; 
+}
+
+
+.hero{
+    background-color:#f9f8f6;
+    width:100%;
+    min-height: 500px;
+    height:105vh;
+    max-height:700px;
+}
+
+.subhero{
+  width:100%;
+  padding-left:3%;
+  padding-top:16%;
+  width:50%;
+}
+
+.heropic{
+  width: 600px;
+  height:600px;
+  position:absolute;
+  right:10px;
+  top:50%;
+  transform:translateY(-50%);
+}
+
+
+.ConName{
+    font-size:55px;
+    font-family:"Bookman Old Style";
+    color: #7c9982;
+    line-height: 1.1!important;
+    text-align:center;
+}
+.phrase{
+    font-family: 'Pacifico', cursive;
+    font-size:19px;
+    color:#6a9155;
+    line-height: 1.7 !important;
+    text-align:center;
+    letter-spacing: 0.75px;
+}
+
+.infoText{
+    font-family:"Bookman Old Style";
+    font-size:18px;
+    color:#7c9982;
+    word-spacing: 1px;
+}
+.mainButton{
+    background-color:transparent; 
+    border-radius: 18px;
+    font-size:19px;
+    font-family:"Bookman Old Style";
+    width:40%;
+    height:45px;
+    position: relative;
+    margin-top: 1.3%;
+    color:#7c9982;
+    border: 2px solid #6a9155;
+}
+.mainButton:hover{
+    background-color:#7c9982;
+    color:#dedede;
+    cursor: pointer;
+    transform: scaleY(1.04);
+}
+.mainButton:active{
+    border: 1px solid #f9f8f6;
+    transform: scale(1);
+}
+.mainButton:hover .registerIcon{
+    background-color:#f9f8f6;
+    color:#f9f8f6;
+    right:3%;
+}
+.registerText {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 40%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  font-size:17px;
+}
+.registerIcon{
+    border:2px solid #6a9155;
+    border-radius:100px;
+    margin: 0;
+    padding:0px 7px 4px 7px;
+    position: absolute;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    right:5.5%;
+}
+
+
+.aboutconclavediv{
+  background-color:#a3da88;
+  min-height: 400px;
+  max-height:900px;
+  height:100vh;
+  width:100%;
+}
+
+.HeadingAbout{
+  text-align:center;
+  font-size: 35px; 
+  line-height: 100%;
+  color:#dedede;
+  font-family:'Bookman Old Style';
+  padding-top:0.4%;
+}
+
+.fullform{
+  margin:auto;
+  width:26%;
+  margin-top:3%;
+  position:relative;
+  display:flex;
+  align-items: center;
+  flex-direction:column;
+  border: 2px #f9f8f6 solid;
+  border-radius: 50px;
+  box-shadow: 0 5px 15px rgba(249,248,246,0.34);
+}
+
+.fullform:before{
+  content:"";
+  position:absolute;
+  left:0.1px;
+  right:0.1px;
+  bottom:0.1px;
+  top: 0.1px;
+  background-image: repeating-linear-gradient(#82b867, #58943a 10%, #82b867 20%);
+  border-radius: 50px;
+  opacity: 0.2;
+}
+
+.form{
+  width:76%;
+  height:62px;
+  position:relative;
+  overflow:hidden;
+}
+
+.form select option{
+  background-color: #8abb71;
+  border:none;
+  outline:none;
+  box-shadow:none;
+}
+
+
+.form input, .form select{
+  width:100%;
+  height:100%;
+  color: #f9f8f6;
+  padding-top:20px;
+  border:none;
+  background-color:transparent;
+  outline:none;
+}
+
+.form label{
+  position:absolute;
+  bottom:0px;
+  left:0%;
+  width:100%;
+  height:100%;
+  color: #f9f8f6;
+  pointer-events:none;
+  border-bottom: 1px solid #f9f8f6;
+}
+
+.form label:after {
+  content:"";
+  position:absolute;
+  left:0px;
+  bottom:-1px;
+  height:100%;
+  width:100%;
+  border-bottom: 3px solid #007090;
+  transform: translateX(-100%);
+  transition: transform 0.3s ease;
+}
+
+.content-dependants{
+  position:absolute;
+  bottom:5px;
+  left:0px;
+  transition:all 0.3s ease;
+}
+
+.form input:focus +.dependants-name .content-dependants, .form select:focus +.dependants-name .content-dependants{
+  transform: translateY(-80%);
+  font-size:14px;
+  color:#007090;
+
+}
+.form input:valid +.dependants-name .content-dependants{
+  transform: translateY(-80%);
+  font-size:14px;
+  color:#f9f8f6;
+}
+
+.form input:focus + .dependants-name:after, .form select:focus + .dependants-name:after{
+  transform: translateX(0%);
+}
+
+.optionclass{
+  transform: translateY(-80%);
+  font-size:14px;
+  color:#f9f8f6;
+}
+
+.btn{
+  z-index:2;
+  border: 1px solid #f9f8f6;
+  color:#f9f8f6;
+  margin-bottom: 8px;
+  border-radius: 20px;
+  box-shadow:none;
+}
+
+.btn:hover{
+  background-color:#619e42;
+  transform: scale(1.03);
+}
+.btn:active{
+  transform: scale(0.9);
+  border: 2px solid #f9f8f6;
+}
+
+#approval{
+  margin-top: 6px;
+  text-align:center;
+  font-family: 'Pacifico', cursive;
+  font-size:22px;
+  color:#6a9155;
+  letter-spacing: 0.75px;
+  text-transform: capitalize;
+}
+
+@media (max-width:1024px){
+  .subhero{
+  width:40%;
+}
+.mainButton{
+    width:54%;
+}
+.registerText{
+  font-size:12px;
+}
+
+}
