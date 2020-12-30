@@ -42,9 +42,9 @@ def load_saved_artifacts():
     global __data_columns
     global __model
 
-    with open("./artifacts/loan_application_columns.json", 'r') as f:
+    with open("./loan_application_columns.json", 'r') as f:
         __data_columns = json.load(f)["data_columns"]
-    with open("./artifacts/loan_application_model_ver24.pickle", "rb") as f:
+    with open("./loan_application_model_ver24.pickle", "rb") as f:
         __model = pickle.load(f)
     print("Saved Artifacts loaded")
 
