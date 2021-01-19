@@ -69,7 +69,7 @@ def get_loan_approval(gender, married, educated, employment, income, coapplicant
 
 def get_employee_prediction(satisfaction_level, last_evaluation, number_project, average_monthly_hours,
                             time_spend_company, work_accident, promotion_last_5years, salary, dept):
-    x = np.zeros(len(__data_columns))
+    x = np.zeros(len(__data_columns_emp))
     if 0 <= satisfaction_level <= 1:
         x[0] = satisfaction_level
     else:
@@ -125,8 +125,8 @@ def get_employee_prediction(satisfaction_level, last_evaluation, number_project,
     else:
         return "Invalid value for departments"
 
-    x = __scalar.transform([x])
-    return "Employee will leave" if __model.predict(x)[0] else "Employee will stay"
+    x = __scalar_emp.transform([x])
+    return "Employee will leave" if __model_emp.predict(x)[0] else "Employee will stay"
 
 
 
@@ -190,7 +190,7 @@ def predict_loan_application():
 
 
 @app.route('/employee_predict', methods=['POST'])
-def predict_loan_application():
+def predict_employee_attrition():
     satisfaction_level = int(request.form['satisfaction_level'])
     last_evaluation = int(request.form['last_evaluation'])
     number_project = int(request.form['number_project'])
@@ -203,7 +203,7 @@ def predict_loan_application():
 
     load_saved_artifacts_emp()
     response = jsonify({
-        "Apporval_Prediction": get_loan_approval(satisfaction_level, last_evaluation, number_project, average_monthly_hours, time_spend_company, work_accident, promotion_last_5years, salary, dept)
+        "Apporval_Prediction": get_employee_prediction(satisfaction_level, last_evaluation, number_project, average_monthly_hours, time_spend_company, work_accident, promotion_last_5years, salary, dept)
     })
     response.headers.add('Access-Control-Allow-Origin', '*')
 
