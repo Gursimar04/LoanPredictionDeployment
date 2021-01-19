@@ -3,12 +3,15 @@ from flask_cors import CORS
 import json
 import pickle
 import numpy as np
-
+import logging
+import sys
 
 app = Flask(__name__)
 CORS(app)
 app.config['CORS_HEADERS'] = 'Content-Type'
 
+app.logger.addHandler(logging.StreamHandler(sys.stdout))
+app.logger.setLevel(logging.ERROR)
 
 __data_columns = None
 __model = None
