@@ -124,7 +124,7 @@ def get_employee_prediction(satisfaction_level, last_evaluation, number_project,
     dept_list = ["it", "randd", "accounting", "hr", "management", "marketing", "product_mng", "sales", "support",
                  "technical"]
     if dept.lower() in dept_list:
-        x[8 + dept_list.index(dept)] = 1
+        x[8 + dept_list.index(dept.lower())] = 1
     else:
         return "Invalid value for departments"
 
